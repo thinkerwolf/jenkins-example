@@ -32,7 +32,7 @@ pipeline {
                 withGradle {
                     container('jdk') {
                         sh 'gradle -v'
-                        sh 'gradle build --no-daemon -x test --refresh-dependencies -b $BASE_DIR/build.gradle'
+                        sh 'gradle build -x test --refresh-dependencies -b $BASE_DIR/build.gradle'
                         sh 'ls -hl $BASE_DIR/build'
                     }
                 }
