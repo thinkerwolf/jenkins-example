@@ -28,8 +28,9 @@ pipeline {
                 withGradle {
                     container('jdk') {
                         sh 'gradle -v'
-                        sh 'gradle build --no-daemon -x test --refresh-dependencies -b ./gradle-example/build.gradle'
-                        archiveArtifacts artifacts: 'build/lib/*.jar'
+                        sh 'gradle build --no-daemon -x test --refresh-dependencies -b gradle-example/build.gradle'
+                        sh 'ls -hl gradle-example/build'
+                        archiveArtifacts artifacts: 'gradle-example/build/libs/*.jar', excludes: 'gradle-example/build/libs/*-plain.jar'
                     }
                 }
             }
