@@ -13,7 +13,7 @@ pipeline {
         REPOSITORY_URI = 'nexus-docker.bluebell015.xyz/docker'
         REPOSITORY_PROTOCOL = 'https'
         NEXUS_CRED = credentials('nexus-registry')
-        BASE_DIR = './gradle-example'
+        BASE_DIR = 'gradle-example'
         IMAGE_NAME = 'gradle-example'
         gitCredential = 'github-thinkerwolf'
     }
@@ -54,7 +54,7 @@ pipeline {
                                 ], fileEncoding: 'UTF-8', filePath: deployFilePath, lineSeparator: 'Unix')
                         ])
                         // 最新的deploy文件上传oss
-                        ossUpload ossId: 'op-oss', includes: '${BASE_DIR}/deploy.yaml', pathPrefix: '${JOB_NAME}/${BUILD_NUMBER}/'
+                        ossUpload ossId: 'op-oss', includes: deployFilePath, pathPrefix: '${JOB_NAME}/${BUILD_NUMBER}/'
                     }
                 }
             }

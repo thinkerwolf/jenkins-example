@@ -34,7 +34,7 @@ spec:
               memory: "500M"
           livenessProbe:
             tcpSocket:
-              port: 3090
+              port: 30003
             initialDelaySeconds: 10
             timeoutSeconds: 10
           readinessProbe:
