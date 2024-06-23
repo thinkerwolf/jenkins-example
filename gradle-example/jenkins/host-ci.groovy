@@ -10,7 +10,7 @@ pipeline {
     }
 
     environment {
-        ARTIFACT_NAME = 'host-example'
+        BASE_DIR = 'gradle-example'
         gitCredential = 'github-thinkerwolf'
     }
 
@@ -28,15 +28,15 @@ pipeline {
                 withGradle {
                     container('jdk') {
                         sh 'gradle -v'
-                        sh 'gradle build --no-daemon -x test --refresh-dependencies -b gradle-example/build.gradle'
-                        sh 'ls -hl gradle-example/build'
-                        archiveArtifacts artifacts: 'gradle-example/build/libs/*.jar', excludes: 'gradle-example/build/libs/*-plain.jar'
+                        sh 'gradle build -x test --stacktrace --scan --refresh-dependencies -b $BASE_DIR/build.gradle'
+                        sh 'ls -hl $BASE_DIR/build'
+
+                        // 将war或jar包上传到oss制品库
+                        ossUpload ossId: 'oss', includes: '$BASE_DIR/build/libs/*.jar', excludes: '$BASE_DIR/build/libs/*-plain.jar', pathPrefix: '${JOB_NAME}/${BUILD_NUMBER}/'
                     }
                 }
             }
         }
-
-        // stage('Deploy') {}
     }
 
 }

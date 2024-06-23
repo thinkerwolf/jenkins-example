@@ -16,6 +16,7 @@ pipeline {
         BASE_DIR = 'gradle-example'
         IMAGE_NAME = 'gradle-example'
         gitCredential = 'github-thinkerwolf'
+        //kubeCredentials = 'eks-126026337867-uat-vod'
     }
 
     stages {
@@ -54,11 +55,25 @@ pipeline {
                                 ], fileEncoding: 'UTF-8', filePath: deployFilePath, lineSeparator: 'Unix')
                         ])
                         // 最新的deploy文件上传oss
-                        ossUpload ossId: 'op-oss', includes: deployFilePath, pathPrefix: '${JOB_NAME}/${BUILD_NUMBER}/'
+                        ossUpload ossId: 'oss', includes: deployFilePath, pathPrefix: '${JOB_NAME}/${BUILD_NUMBER}/'
                     }
                 }
             }
         }
+
+        /*stage('Deploy') {
+            agent {
+                label 'agent-sit'
+            }
+            steps {
+                ossDownload ossId: 'op-oss', path: '${JOB_NAME}/${BUILD_NUMBER}/', location: 'deploy.yaml'
+                sh 'ls -hl'
+                withKubeCredentials(kubectlCredentials: [[credentialsId: kubeCredentials]]) {
+                    sh 'kubectl apply -f deploy.yaml'
+                }
+            }
+        }*/
+
     }
 
 }
