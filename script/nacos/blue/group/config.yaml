@@ -1,0 +1,127 @@
+server:
+  port: 2099
+  undertow:
+    buffer-size: 1024
+    direct-buffers: true
+    threads:
+      io: 16
+      worker: 400
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+
+
+spring:
+  application:
+    name: ms-notice
+
+  servlet:
+    multipart:
+      max-file-size: 256MB
+      max-request-size: 1024MB
+  web:
+    resources:
+      add-mappings: false
+  mvc:
+    throw-exception-if-no-handler-found: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/ms_notice?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 1234
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    initial-size: 5
+    max-active: 20
+    min-idle: 5
+    max-wait: 60000
+    validation-query: select 1
+    #validation-query: select 1 from dual
+    validation-query-timeout: 2000
+    test-on-borrow: false
+    test-on-return: false
+    test-while-idle: true
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    stat-view-servlet:
+      enabled: true
+      login-username: dagger
+      login-password: 1qaz@WSX
+    web-stat-filter:
+      enabled: true
+      url-pattern: /*
+      exclusions: '*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*'
+      session-stat-enable: true
+      session-stat-max-count: 10
+      #hikari:
+      #connection-test-query: SELECT 1 FROM DUAL
+      #connection-timeout: 30000
+      #maximum-pool-size: 5
+      #max-lifetime: 1800000
+      #minimum-idle: 1
+  cache:
+    type: GENERIC
+
+  dagger:
+    log:
+      enable-invoke-time-print: true
+    database:
+      sql-log: true
+      ignoreTables:
+        - email_notification
+
+    cache:
+      config-location: ./config/cache.properties
+      open-spring-cache: true
+      serialization: json
+      l2-cache-open: true
+      redis-client: lettuce
+      cache-clean-mode: aws-cluster-blend
+      allow-null-values: true
+      redisson:
+        open: true
+
+# mybatis
+mybatis-plus:
+  mapper-locations: classpath*:/mappers/*Mapper.xml
+  typeAliasesPackage: io.github.novareseller.**.entity,xyz.novareseller.**.entity
+  #typeEnumsPackage: org.springblade.dashboard.entity.enums
+  global-config:
+    banner: false
+    db-config:
+      id-type: assign_id
+      insert-strategy: not_null
+      update-strategy: not_null
+      select-strategy: not_null
+      table-underline: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+
+notice:
+  mailgun:
+    base-url: https://api.mailgun.net
+
+
+##dubbo 注册到注册中心的名称
+dubbo:
+  provider:
+    retries: 0
+    timeout: 10000
+  application:
+    name: notice
+  ##采用协议方式和端口号
+  protocol:
+    ## 常用协议：dubbo,http,webService等
+    name: dubbo
+    ## 发布dubbo端口号为20880
+    port: 20890
+  registries:
+    onlinestore:
+      check: false
+      address: nacos://localhost:8848?username=nacos&password=nacos
+      protocol: dubbo
+  scan:
+    base-packages: xyz.novareseller.notice.provider

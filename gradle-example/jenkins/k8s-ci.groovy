@@ -99,8 +99,7 @@ pipeline {
                             "🔢 **任务编号**：[${BUILD_DISPLAY_NAME}](${BUILD_URL})",
                             "🌟 **构建状态**: ${currentBuild.currentResult}",
                             "🕐 **构建用时**: ${currentBuild.duration} ms",
-                            "👤 **执  行 者**: ${env.BUILD_USER}",
-                            "<at id=all></at>"
+                            "👤 **执  行 者**: ${env.BUILD_USER}"
                     ],
                     buttons: [
                             [
