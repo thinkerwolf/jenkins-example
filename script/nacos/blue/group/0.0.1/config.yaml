@@ -1,8 +1,0 @@
-server:
-  port: 2099
-  undertow:
-    buffer-size: 2048
-    direct-buffers: true
-    threads:
-      io: 8
-      worker: 200
