@@ -66,4 +66,5 @@ databaseChangeLog:
 
         - sql:
             sql: |-
+              USE test;
               ALTER TABLE company MODIFY COLUMN zip_code varchar(70) NULL COMMENT '邮编';
