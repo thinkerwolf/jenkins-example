@@ -8,4 +8,5 @@ databaseChangeLog:
       changes:
         - sql:
             sql: |-
+              USE test;
               DELETE FROM company WHERE id > 100;
