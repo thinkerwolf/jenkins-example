@@ -10,10 +10,12 @@ nacosChangeLog:
           group: group
           dataId: config.yaml
           format: yaml # 只支持yaml和properties
+          # 追加内容
           patchContent: |-
             spring: 
               application: 
                 name: blue
+          # 删除内容
           deleteContent: |-
             notice:
         - namespace: blue
