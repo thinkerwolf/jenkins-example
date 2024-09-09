@@ -54,7 +54,6 @@ databaseChangeLog:
       labels: example-label
       context: example-context
       comment: example-comment
-      runOnChange: true
       changes:
         - addColumn:
             tableName: person
