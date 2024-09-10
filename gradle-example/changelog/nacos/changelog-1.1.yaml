@@ -1,6 +1,6 @@
 nacosChangeLog:
   - changeSet:
-      id: v1.1 # 所有changeSet的ID不可重复
+      id: gradle-example-v1.1 # 所有changeSet的ID不可重复
       author: bruce.wu
       comment: 注释
       ignore: false # 是否忽略此changeSet
