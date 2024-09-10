@@ -1,14 +1,14 @@
 databaseChangeLog:
   - changeSet:
-      id: 1.0.0
+      id: gradle-example-v1.0.0
       author: bruce.wu
-      labels: example-label
-      context: example-context
+      labels: gradle-example
+      context: gradle-example
       comment: example-comment
       changes:
         - createTable:
             # Liquibase自己定义的数据库变更操作。https://docs.liquibase.com/change-types/home.html
-            tableName: person
+            tableName: person_tab
             schemaName: test
             columns:
               - column:
@@ -38,7 +38,7 @@ databaseChangeLog:
             endDelimiter: ;
             sql: |-
               USE test;
-              CREATE TABLE IF NOT EXISTS `company` (
+              CREATE TABLE IF NOT EXISTS `company_tab` (
                 `id` int NOT NULL AUTO_INCREMENT,
                 `name` varchar(50) COLLATE utf8mb4_bin NOT NULL,
                 `address1` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
@@ -49,14 +49,14 @@ databaseChangeLog:
 
 
   - changeSet:
-      id: 1.0.1
+      id: gradle-example-v1.0.1
       author: bruce.wu
-      labels: example-label
-      context: example-context
+      labels: gradle-example
+      context: gradle-example
       comment: example-comment
       changes:
         - addColumn:
-            tableName: person
+            tableName: person_tab
             schemaName: test
             columns:
               - column:
@@ -66,4 +66,4 @@ databaseChangeLog:
         - sql:
             sql: |-
               USE test;
-              ALTER TABLE company ADD COLUMN zip_code varchar(70) NULL COMMENT '邮编';
+              ALTER TABLE company_tab ADD COLUMN zip_code varchar(70) NULL COMMENT '邮编';
