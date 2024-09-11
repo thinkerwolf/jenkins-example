@@ -39,11 +39,11 @@ pipeline {
                                 // 执行Nacos配置变更，读取 changeLog 文件，获取changeSet
                                 def nacosChangeSet = nacosChangeSetGet(nacosId: 'vod-dev', changeLogFile: 'changelog/nacos/changelog-root.yaml')
 
-                                if (nacosChangeSet["id"]) {
+                                if (nacosChangeSet["ids"] && nacosChangeSet["ids"].size() > 0) {
                                     // 弹出界面预览配置前后修改比对
                                     def alterResult = input(message: 'Nacos Config Edit', parameters: [nacosConfigAlter(items: nacosChangeSet['changes'])])
                                     // 应用 changeSet，刷入nacos配置
-                                    nacosChangeSetApply(nacosId: "vod-dev", changeSetId: nacosChangeSet['id'], items: alterResult['values'])
+                                    nacosChangeSetApply(nacosId: "vod-dev", changeSetId: nacosChangeSet['ids'], items: alterResult['values'])
                                 } else {
                                     echo "No nacos change set"
                                 }
