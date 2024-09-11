@@ -1,0 +1,33 @@
+nacosChangeLog:
+  - changeSet:
+      id: gradle-example-v1.2.0 # 所有changeSet的ID不可重复
+      author: bruce.wu
+      comment: 注释
+      ignore: false # 是否忽略此changeSet
+      changes:
+        # namespace+group+dataId的组合在changes中不能重复
+        - namespace: blue
+          group: group
+          dataId: config.yaml
+          format: yaml # 目前只支持yaml和properties
+          # 追加内容
+          patchContent: |-
+            goose:
+              name: Goose
+              service:
+                modules: ["portal", "live-enduser", "vod-enduser"]
+            wanel:
+              name: Wanel
+          # 删除内容
+          deleteContent: |-
+            aaa: 333
+        - namespace: blue
+          group: group
+          dataId: config.properties
+          format: properties
+          patchContent: |-
+            patch.bbb = 1111111
+            patch.ccc = 2222222
+          deleteContent: |-
+            delete.aaa = 11111
+            delete.ccc = 11111

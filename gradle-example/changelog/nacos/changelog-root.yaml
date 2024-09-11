@@ -3,3 +3,5 @@ nacosChangeLog:
       file: changelog-1.0.yaml
   - include:
       file: changelog-1.1.yaml
+  - include:
+      file: changelog-1.2.yaml
