@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: gradle-example-v1.0.0
+      id: gradle-example-1.0.1-release
       author: bruce.wu
       labels: gradle-example
       context: gradle-example
@@ -8,7 +8,7 @@ databaseChangeLog:
       changes:
         - createTable:
             # Liquibase自己定义的数据库变更操作。https://docs.liquibase.com/change-types/home.html
-            tableName: person_tab
+            tableName: person
             schemaName: test
             columns:
               - column:
@@ -49,14 +49,14 @@ databaseChangeLog:
 
 
   - changeSet:
-      id: gradle-example-v1.0.1
+      id: gradle-example-1.0.2-release
       author: bruce.wu
       labels: gradle-example
       context: gradle-example
       comment: example-comment
       changes:
         - addColumn:
-            tableName: person_tab
+            tableName: person
             schemaName: test
             columns:
               - column:
