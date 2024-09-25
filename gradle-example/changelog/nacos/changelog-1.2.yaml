@@ -16,6 +16,7 @@ nacosChangeLog:
               name: Goose
               service:
                 modules: ["portal", "live-enduser", "vod-enduser"]
+            # dfasfaf
             wanel:
               name: Wanel
           # 删除内容

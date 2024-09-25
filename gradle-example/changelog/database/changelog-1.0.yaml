@@ -38,7 +38,7 @@ databaseChangeLog:
             endDelimiter: ;
             sql: |-
               USE test;
-              CREATE TABLE IF NOT EXISTS `company_tab` (
+              CREATE TABLE IF NOT EXISTS `company` (
                 `id` int NOT NULL AUTO_INCREMENT,
                 `name` varchar(50) COLLATE utf8mb4_bin NOT NULL,
                 `address1` varchar(50) COLLATE utf8mb4_bin DEFAULT NULL,
