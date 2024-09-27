@@ -66,4 +66,4 @@ databaseChangeLog:
         - sql:
             sql: |-
               USE test;
-              ALTER TABLE company_tab ADD COLUMN zip_code varchar(70) NULL COMMENT '邮编';
+              ALTER TABLE company ADD COLUMN zip_code varchar(70) NULL COMMENT '邮编';

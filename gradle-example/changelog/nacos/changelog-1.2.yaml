@@ -1,6 +1,6 @@
 nacosChangeLog:
   - changeSet:
-      id: gradle-example-v1.2.1 # 所有changeSet的ID不可重复
+      id: gradle-example-v1.2.1-release # 所有changeSet的ID不可重复
       author: bruce.wu
       comment: 注释
       ignore: false # 是否忽略此changeSet
@@ -34,7 +34,7 @@ nacosChangeLog:
             caffeine.region.cccc = 1000, 30m
 
   - changeSet:
-      id: gradle-example-v1.2.2 # 所有changeSet的ID不可重复
+      id: gradle-example-v1.2.2-release # 所有changeSet的ID不可重复
       author: bruce.wu
       comment: 注释
       ignore: false # 是否忽略此changeSet
