@@ -1,0 +1,23 @@
+nacosChangeLog:
+  - changeSet:
+      id: maven-example-v1.1.0
+      author: bruce.wu
+      comment: 注释
+      ignore: false
+      changes:
+        - namespace: green
+          group: group
+          dataId: config.yaml
+          format: yaml
+          patchContent: |-
+            spring:
+              application:
+                name: spring-green
+        - namespace: green
+          group: group
+          dataId: config.properties
+          format: properties
+          patchContent: |-
+            redis.cluster_name = green-redis
+          deleteContent: |-
+            redis.password = 1234
