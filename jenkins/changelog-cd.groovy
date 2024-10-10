@@ -1,3 +1,4 @@
+/* groovylint-disable CompileStatic, DuplicateStringLiteral, GStringExpressionWithinString, LineLength, NestedBlockDepth, NoDef, VariableTypeRequired */
 pipeline {
     agent {
         label 'example'
@@ -21,47 +22,40 @@ pipeline {
                     def nacosAlterMap = [:]
                     def appList = "${DEPLOY_ARTIFACTS}".split(',')
                     appList.each { app ->
-                        def gav = "${app}".split(':')
+                        def gav = app.split(':')
                         def groupId = gav[0]
                         def artifactId = gav[1]
                         def version = gav[2]
 
-                        def start = true
-                        try {
-                            nexusArtifactDownload(
-                                    serverId: 'nexus',
-                                    repository: 'raw-op',
-                                    groupId: groupId,
-                                    artifactId: artifactId,
-                                    version: version,
-                                    location: "${artifactId}/changelog.tar.gz")
-                        } catch (Exception e) {
-                            echo "Caught: ${e}"
-                            start = false
-                        }
+                        nexusArtifactDownload(
+                                serverId: 'nexus',
+                                repository: 'raw-op',
+                                groupId: groupId,
+                                artifactId: artifactId,
+                                version: version,
+                                location: "${artifactId}/changelog.tar.gz")
 
-                        if (start) {
-                            sh """
+
+                        sh """
                             tar -xvf ${artifactId}/changelog.tar.gz -C ${artifactId}
                             """
-                            if (fileExists("${artifactId}/changelog/nacos")) {
-                                def nacosChangeSet = nacosChangeSetGet(
-                                        nacosId: 'vod-dev',
-                                        changeLogFile: "${artifactId}/changelog/nacos/changelog-root.yaml",
-                                        vars: ['NAMESPACE': 'blue', 'ENV': 'sit']
-                                )
+                        if (fileExists("${artifactId}/changelog/nacos")) {
+                            def nacosChangeSet = nacosChangeSetGet(
+                                    nacosId: 'vod-dev',
+                                    changeLogFile: "${artifactId}/changelog/nacos/changelog-root.yaml",
+                                    vars: ['NAMESPACE': 'blue', 'ENV': 'sit']
+                            )
 
-                                def changeSetIds = nacosChangeSet['ids']
-                                if (changeSetIds && changeSetIds.size() > 0) {
-                                    nacosAlterMap[artifactId] = ['parameter': nacosConfigAlter(items: nacosChangeSet['changes']), 'changeSetIds': changeSetIds]
-                                } else {
-                                    echo "No nacos change set"
-                                }
+                            def changeSetIds = nacosChangeSet['ids']
+                            if (changeSetIds && changeSetIds.size() > 0) {
+                                nacosAlterMap[artifactId] = ['parameter': nacosConfigAlter(items: nacosChangeSet['changes']), 'changeSetIds': changeSetIds]
+                            } else {
+                                echo "No nacos change set"
                             }
+                        }
 
-                            if (fileExists("${artifactId}/changelog/database")) {
-                                databaseApps.add(artifactId)
-                            }
+                        if (fileExists("${artifactId}/changelog/database")) {
+                            databaseApps.add(artifactId)
                         }
                     }
 
