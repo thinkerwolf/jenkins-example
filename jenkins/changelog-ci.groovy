@@ -34,31 +34,39 @@ pipeline {
                         cd gradle-example
                         gradle -v
                         gradle build -x test --stacktrace --scan --refresh-dependencies -b build.gradle
-                        
-                        # 将changelog目录下的nacos和数据库变更上传到制品库
-                        tar -czf changelog.tar.gz changelog
                         """
-                        nexusArtifactPublish(
-                                serverId: 'nexus',
-                                repository: "${NEXUS_REPO}",
-                                groupId: "${GROUP_ID}",
-                                artifactId: "gradle-example",
-                                version: version,
-                                includes: "gradle-example/changelog.tar.gz")
 
-                        sh """
-                        cd maven-example
-                        mvn package -Dmaven.test.skip=true
-                        # 将changelog目录下的nacos和数据库变更上传到制品库
-                        tar -czf changelog.tar.gz changelog
-                        """
-                        nexusArtifactPublish(
-                                serverId: 'nexus',
-                                repository: "${NEXUS_REPO}",
-                                groupId: "${GROUP_ID}",
-                                artifactId: "maven-example",
-                                version: version,
-                                includes: "maven-example/changelog.tar.gz")
+                        if (fileExists("gradle-example/changelog")) {
+                            sh """
+                                cd gradle-example
+                                # 将changelog目录下的nacos和数据库变更上传到制品库
+                                tar -czf changelog.tar.gz changelog
+                            """
+                            nexusArtifactPublish(
+                                    serverId: 'nexus',
+                                    repository: "${NEXUS_REPO}",
+                                    groupId: "${GROUP_ID}",
+                                    artifactId: "gradle-example",
+                                    version: version,
+                                    includes: "gradle-example/changelog.tar.gz")
+                        }
+
+
+                        if (fileExists("maven-example/changelog")) {
+                            sh """
+                            cd maven-example
+                            # 将changelog目录下的nacos和数据库变更上传到制品库
+                            tar -czf changelog.tar.gz changelog
+                            """
+                            nexusArtifactPublish(
+                                    serverId: 'nexus',
+                                    repository: "${NEXUS_REPO}",
+                                    groupId: "${GROUP_ID}",
+                                    artifactId: "maven-example",
+                                    version: version,
+                                    includes: "maven-example/changelog.tar.gz")
+                        }
+
                     }
                 }
             }
