@@ -18,7 +18,7 @@ pipeline {
                 script {
                     def schemaNameMap = ["gradle-example": "test", "maven-example": "test_green"]
                     def databaseApps = []
-                    def nacosAlterParameterMap = [:]
+                    def nacosAlterMap = [:]
                     def appList = "${DEPLOY_ARTIFACTS}".split(',')
                     appList.each { app ->
                         def gav = "${app}".split(':')
@@ -53,7 +53,7 @@ pipeline {
 
                                 def changeSetIds = nacosChangeSet['ids']
                                 if (changeSetIds && changeSetIds.size() > 0) {
-                                    nacosAlterParameterMap[artifactId] = nacosConfigAlter(items: nacosChangeSet['changes'])
+                                    nacosAlterMap[artifactId] = ['parameter': nacosConfigAlter(items: nacosChangeSet['changes']), 'changeSetIds': changeSetIds]
                                 } else {
                                     echo "No nacos change set"
                                 }
@@ -65,8 +65,10 @@ pipeline {
                         }
                     }
 
-                    nacosAlterParameterMap.each { entry ->
-                        def alterResult = input(message: "Nacos Config Edit: ${entry.key}", parameters: [entry.value])
+                    nacosAlterMap.each { entry ->
+                        def changeSetIds = entry.value['changeSetIds']
+                        def parameter = entry.value['parameter']
+                        def alterResult = input(message: "Nacos Config Edit: ${entry.key}", parameters: [parameter])
                         println(alterResult)
                         // nacosChangeSetApply(nacosId: "vod-dev", changeSetId: changeSetIds, items: alterResult['values'])
                     }
