@@ -1,6 +1,6 @@
 nacosChangeLog:
   - changeSet:
-      id: maven-example-v1.1.0
+      id: maven-example-1.1.0-release
       author: bruce.wu
       comment: 注释
       ignore: false

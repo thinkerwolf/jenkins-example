@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: gradle-example-1.0.1-release
+      id: maven-example-1.0.1-release
       author: bruce.wu
       labels: gradle-example
       context: gradle-example
@@ -10,7 +10,6 @@ databaseChangeLog:
         - createTable:
             # Liquibase自己定义的数据库变更操作。https://docs.liquibase.com/change-types/home.html
             tableName: person
-            schemaName: test
             columns:
               - column:
                   name: id
@@ -38,7 +37,6 @@ databaseChangeLog:
             # 也支持直接执行SQL脚本。https://docs.liquibase.com/change-types/sql.html#yaml_example
             endDelimiter: ;
             sql: |-
-              USE test;
               CREATE TABLE IF NOT EXISTS `company` (
                 `id` int NOT NULL AUTO_INCREMENT,
                 `name` varchar(50) COLLATE utf8mb4_bin NOT NULL,
@@ -59,7 +57,6 @@ databaseChangeLog:
       changes:
         - addColumn:
             tableName: person
-            schemaName: test
             columns:
               - column:
                   name: zip_code
@@ -67,5 +64,4 @@ databaseChangeLog:
 
         - sql:
             sql: |-
-              USE test;
               ALTER TABLE company ADD COLUMN zip_code varchar(70) NULL COMMENT '邮编';

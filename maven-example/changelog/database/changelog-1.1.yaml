@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: gradle-example-1.1.1-release
+      id: maven-example-1.1.1-release
       author: henry.hua
       labels: gradle-example
       context: gradle-example
@@ -8,5 +8,4 @@ databaseChangeLog:
       changes:
         - sql:
             sql: |-
-              USE test;
               DELETE FROM company WHERE id > 100;
