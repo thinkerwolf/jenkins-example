@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: maven-example-changelog-v6.1.0.0-01
+      author: henry.hua
+      comment: example-comment
+      changes:
+        - sql:
+            sql: |-
+              DELETE FROM company WHERE id > 99;

@@ -1,0 +1,34 @@
+nacosChangeLog:
+  - changeSet:
+      id: maven-example-changelog-v6.0.0.0-02 # 所有changeSet的ID不可重复
+      author: bruce.wu
+      comment: 注释
+      ignore: false # 是否忽略此changeSet
+      changes:
+        # namespace+group+dataId的组合在changes中不能重复
+        - namespace: ${NAMESPACE}
+          group: group
+          dataId: config-${ENV}.yaml
+          format: yaml # 目前只支持yaml和properties
+          # 追加内容
+          patchContent: |-
+            goose:
+              name: Goose
+              service:
+                modules: ["portal", "live-enduser", "vod-enduser"]
+            # dfasfaf
+            wanel:
+              name: Wanel
+          # 删除内容
+          deleteContent: |-
+            aaa: 2333
+        - namespace: ${NAMESPACE}
+          group: group
+          dataId: config-${ENV}.properties
+          format: properties
+          patchContent: |-
+            caffeine.region.default = 500, 2h 
+            redis.maxIdle = 1500
+            caffeine.region.service_type = 500, 12h
+          deleteContent: |-
+            caffeine.region.cccc = 1000, 30m
