@@ -55,7 +55,7 @@ nacosChangeLog:
                     web:
                       servlet: debug
   - changeSet:
-      id: gradle-example-v1.2.2-release # 所有changeSet的ID不可重复
+      id: gradle-example-v1.2.3-release # 所有changeSet的ID不可重复
       author: xxx
       comment: 注释
       changes:
