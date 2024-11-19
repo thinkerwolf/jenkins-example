@@ -8,7 +8,7 @@ nacosChangeLog:
         - namespace: blue
           group: group
           dataId: config.yaml
-          format: yaml # 目前只支持yaml和properties
+          format: yaml # 目前支持yaml、properties、json
           # 追加内容
           patchContent: |-
             spring:
@@ -27,3 +27,23 @@ nacosChangeLog:
           deleteContent: |-
             delete.aaa = 9
             delete.ccc = fff
+        - namespace: ${NAMESPACE}
+          group: group
+          dataId: config-${ENV}.json
+          format: json
+          patchContent: |-
+            {
+              "name": "xxx",
+              "age": 30,
+              "gender": 1,
+              "address": {
+                "country": "China",
+                "province": "Jiangsu",
+                "city": "Nanjing"
+              },
+              "steps": [1, 2, 3],
+              "positions": [
+                {"id": 1000, "name": "Developer"},
+                {"id": 1001, "name": "Designer"}
+              ]
+            }            
