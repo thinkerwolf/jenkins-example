@@ -72,7 +72,7 @@ nacosChangeLog:
               "address": {
                 "province": "AnHui",
                 "city": "ChuZhou"
-              }
+              },
               "positions": [
                 {"id": 1000, "name": "Developer"},
                 {"id": 1001, "name": "Designer"}
