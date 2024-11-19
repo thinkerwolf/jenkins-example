@@ -28,3 +28,31 @@ nacosChangeLog:
           deleteContent: |-
             delete.aaa = 9
             delete.ccc = fff
+  - changeSet:
+      id: gradle-example-v1.1.2-release # 所有changeSet的ID不可重复
+      author: bruce.wu
+      comment: 注释
+      ignore: false # 是否忽略此changeSet
+      changes:
+        # namespace+group+dataId的组合在changes中不能重复
+        - namespace: ${NAMESPACE}
+          group: group
+          dataId: config-${ENV}.json
+          format: json
+          # 追加内容
+          patchContent: |-
+            {
+              "name": "bruce.wu",
+              "age": 30,
+              "gender": 1,
+              "address": {
+                "country": "China",
+                "province": "Jiangsu",
+                "city": "Nanjing"
+              },
+              "steps": [1, 2, 3],
+              "positions": [
+                {"id": 1000, "name": "Developer"},
+                {"id": 1001, "name": "Designer"}
+              ]
+            }

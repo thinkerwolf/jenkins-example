@@ -1,9 +1,8 @@
 nacosChangeLog:
   - changeSet:
       id: gradle-example-1.2.1-release # 所有changeSet的ID不可重复
-      author: bruce.wu
+      author: xxx
       comment: 注释
-      ignore: false # 是否忽略此changeSet
       changes:
         # namespace+group+dataId的组合在changes中不能重复
         - namespace: ${NAMESPACE}
@@ -37,13 +36,12 @@ nacosChangeLog:
       id: gradle-example-v1.2.2-release # 所有changeSet的ID不可重复
       author: bruce.wu
       comment: 注释
-      ignore: false # 是否忽略此changeSet
       changes:
         # namespace+group+dataId的组合在changes中不能重复
         - namespace: ${NAMESPACE}
           group: group
           dataId: config-${ENV}.yaml
-          format: yaml # 目前只支持yaml和properties
+          format: yaml
           # 追加内容
           patchContent: |-
             swagger:
@@ -56,3 +54,34 @@ nacosChangeLog:
                   springframework:  
                     web:
                       servlet: debug
+  - changeSet:
+      id: gradle-example-v1.2.2-release # 所有changeSet的ID不可重复
+      author: xxx
+      comment: 注释
+      changes:
+        # namespace+group+dataId的组合在changes中不能重复
+        - namespace: ${NAMESPACE}
+          group: group
+          dataId: config-${ENV}.json
+          format: json
+          # 追加内容
+          patchContent: |-
+            {
+              "name": "wukai",
+              "age": 32,
+              "address": {
+                "province": "AnHui",
+                "city": "ChuZhou"
+              }
+              "positions": [
+                {"id": 1000, "name": "Developer"},
+                {"id": 1001, "name": "Designer"}
+              ]
+            }
+          # 删除内容
+          deleteContent: |-
+            {
+              "positions": [
+                {"id": 1001, "name": "Designer"}
+              ]
+            }
