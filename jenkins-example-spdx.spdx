@@ -1,0 +1,293 @@
+SPDXVersion: SPDX-2.3
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: /Users/wukai/IdeaProjects/Opensource/jenkins-example
+DocumentNamespace: https://anchore.com/syft/dir/Users/wukai/IdeaProjects/Opensource/jenkins-example-4f82f6a8-471d-4d13-bf09-cdfc62685907
+LicenseListVersion: 3.25
+Creator: Organization: Anchore, Inc
+Creator: Tool: syft-1.17.0
+Created: 2024-12-01T09:37:19Z
+
+##### Unpackaged files
+
+FileName: /gradle-example/gradle/wrapper/gradle-wrapper.jar
+SPDXID: SPDXRef-File-...gradle-wrapper-gradle-wrapper.jar-2d4aa5bf17581ae4
+FileType: APPLICATION
+FileType: ARCHIVE
+FileChecksum: SHA1: 1a5591754096883e87f8d5fdbf57ec2a6a99e724
+FileChecksum: SHA256: cb0da6751c2b753a16ac168bb354870ebb1e162e9083f116729cec9c781156b8
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+
+FileName: /maven-example/pom.xml
+SPDXID: SPDXRef-File-maven-example-pom.xml-32fc0f8e95edd127
+FileType: TEXT
+FileChecksum: SHA1: 4c6737a994ecc414da7936084a02c36cc2331d1e
+FileChecksum: SHA256: 04788dc83490379bdcda7b69ec4993c1ad694b3a0334a5727f9212e4d5857139
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+
+##### Package: /Users/wukai/IdeaProjects/Opensource/jenkins-example
+
+PackageName: /Users/wukai/IdeaProjects/Opensource/jenkins-example
+SPDXID: SPDXRef-DocumentRoot-Directory--Users-wukai-IdeaProjects-Opensource-jenkins-example
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+PrimaryPackagePurpose: FILE
+FilesAnalyzed: false
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+
+##### Package: gradle-wrapper
+
+PackageName: gradle-wrapper
+SPDXID: SPDXRef-Package-java-archive-gradle-wrapper-8042a6ff078807c5
+PackageVersion: UNKNOWN
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageChecksum: SHA1: 1a5591754096883e87f8d5fdbf57ec2a6a99e724
+PackageSourceInfo: acquired package info from installed java archive: /gradle-example/gradle/wrapper/gradle-wrapper.jar
+PackageLicenseConcluded: Apache-2.0
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:gradle-wrapper:gradle-wrapper:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:gradle-wrapper:gradle_wrapper:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:gradle_wrapper:gradle-wrapper:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:gradle_wrapper:gradle_wrapper:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:gradle:gradle-wrapper:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:gradle:gradle_wrapper:*:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:maven/gradle-wrapper/gradle-wrapper
+
+##### Package: maven-example
+
+PackageName: maven-example
+SPDXID: SPDXRef-Package-java-archive-maven-example-8f5ace5afda96a3e
+PackageVersion: 0.0.1-SNAPSHOT
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed java archive: /maven-example/pom.xml
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:org.springframework.boot:maven-example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:org.springframework.boot:maven_example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:org.springframework.boot:boot:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springframework:maven-example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springframework:maven_example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:maven-example:maven-example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:maven-example:maven_example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:maven_example:maven-example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:maven_example:maven_example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:com.example:maven-example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:com.example:maven_example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:example:maven-example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:example:maven_example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springframework:boot:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:maven:maven-example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:maven:maven_example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:boot:maven-example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:boot:maven_example:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:maven-example:boot:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:maven_example:boot:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:com.example:boot:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:example:boot:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:maven:boot:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:boot:boot:0.0.1-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:maven/com.example/maven-example@0.0.1-SNAPSHOT
+
+##### Package: oauth2-oidc-sdk
+
+PackageName: oauth2-oidc-sdk
+SPDXID: SPDXRef-Package-java-archive-oauth2-oidc-sdk-c6786cfd78bcd1e0
+PackageVersion: 11.20.1
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed java archive: /maven-example/pom.xml
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:oauth2-oidc-sdk:oauth2-oidc-sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:oauth2-oidc-sdk:oauth2_oidc_sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:oauth2_oidc_sdk:oauth2-oidc-sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:oauth2_oidc_sdk:oauth2_oidc_sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:com.nimbusds:oauth2-oidc-sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:com.nimbusds:oauth2_oidc_sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:oauth2-oidc:oauth2-oidc-sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:oauth2-oidc:oauth2_oidc_sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:oauth2_oidc:oauth2-oidc-sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:oauth2_oidc:oauth2_oidc_sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:nimbusds:oauth2-oidc-sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:nimbusds:oauth2_oidc_sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:oauth2:oauth2-oidc-sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:oauth2:oauth2_oidc_sdk:11.20.1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:maven/com.nimbusds/oauth2-oidc-sdk@11.20.1
+
+##### Package: prt-engine-java
+
+PackageName: prt-engine-java
+SPDXID: SPDXRef-Package-java-archive-prt-engine-java-dcea2d7db7924efd
+PackageVersion: 1.0.1-2.8T15-SNAPSHOT
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed java archive: /maven-example/pom.xml
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt-engine-java:prt-engine-java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt-engine-java:prt_engine_java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt_engine_java:prt-engine-java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt_engine_java:prt_engine_java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:com.stream.prt:prt-engine-java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:com.stream.prt:prt_engine_java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt-engine:prt-engine-java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt-engine:prt_engine_java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt_engine:prt-engine-java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt_engine:prt_engine_java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stream:prt-engine-java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stream:prt_engine_java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt-engine-java:prt:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt:prt-engine-java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt:prt_engine_java:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt_engine_java:prt:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:com.stream.prt:prt:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt-engine:prt:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt_engine:prt:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:stream:prt:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:prt:prt:1.0.1-2.8T15-SNAPSHOT:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:maven/com.stream.prt/prt-engine-java@1.0.1-2.8T15-SNAPSHOT
+
+##### Package: spring-boot-starter-test
+
+PackageName: spring-boot-starter-test
+SPDXID: SPDXRef-Package-java-archive-spring-boot-starter-test-ab04c277c676ba46
+PackageVersion: UNKNOWN
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed java archive: /maven-example/pom.xml
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:org.springframework.boot:spring-boot-starter-test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:org.springframework.boot:spring_boot_starter_test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring-boot-starter-test:spring-boot-starter-test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring-boot-starter-test:spring_boot_starter_test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring_boot_starter_test:spring-boot-starter-test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring_boot_starter_test:spring_boot_starter_test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring-boot-starter:spring-boot-starter-test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring-boot-starter:spring_boot_starter_test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring_boot_starter:spring-boot-starter-test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring_boot_starter:spring_boot_starter_test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springframework:spring-boot-starter-test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springframework:spring_boot_starter_test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring-boot:spring-boot-starter-test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring-boot:spring_boot_starter_test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring_boot:spring-boot-starter-test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring_boot:spring_boot_starter_test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring:spring-boot-starter-test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring:spring_boot_starter_test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:boot:spring-boot-starter-test:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:boot:spring_boot_starter_test:*:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:maven/org.springframework.boot/spring-boot-starter-test
+
+##### Package: spring-boot-starter-web
+
+PackageName: spring-boot-starter-web
+SPDXID: SPDXRef-Package-java-archive-spring-boot-starter-web-2b5f897203ac7a2a
+PackageVersion: UNKNOWN
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed java archive: /maven-example/pom.xml
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:org.springframework.boot:spring-boot-starter-web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:org.springframework.boot:spring_boot_starter_web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring-boot-starter-web:spring-boot-starter-web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring-boot-starter-web:spring_boot_starter_web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring_boot_starter_web:spring-boot-starter-web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring_boot_starter_web:spring_boot_starter_web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring-boot-starter:spring-boot-starter-web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring-boot-starter:spring_boot_starter_web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring_boot_starter:spring-boot-starter-web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring_boot_starter:spring_boot_starter_web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springframework:spring-boot-starter-web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springframework:spring_boot_starter_web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring-boot:spring-boot-starter-web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring-boot:spring_boot_starter_web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring_boot:spring-boot-starter-web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring_boot:spring_boot_starter_web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring:spring-boot-starter-web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:spring:spring_boot_starter_web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:boot:spring-boot-starter-web:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:boot:spring_boot_starter_web:*:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:maven/org.springframework.boot/spring-boot-starter-web
+
+##### Package: springdoc-openapi-starter-webmvc-ui
+
+PackageName: springdoc-openapi-starter-webmvc-ui
+SPDXID: SPDXRef-Package-java-archive-springdoc-openapi-starter-webmvc-ui-21b2145f0093b8a0
+PackageVersion: 2.6.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed java archive: /maven-example/pom.xml
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc-openapi-starter-webmvc-ui:springdoc-openapi-starter-webmvc-ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc-openapi-starter-webmvc-ui:springdoc_openapi_starter_webmvc_ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc_openapi_starter_webmvc_ui:springdoc-openapi-starter-webmvc-ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc_openapi_starter_webmvc_ui:springdoc_openapi_starter_webmvc_ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc-openapi-starter-webmvc:springdoc-openapi-starter-webmvc-ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc-openapi-starter-webmvc:springdoc_openapi_starter_webmvc_ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc_openapi_starter_webmvc:springdoc-openapi-starter-webmvc-ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc_openapi_starter_webmvc:springdoc_openapi_starter_webmvc_ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc-openapi-starter:springdoc-openapi-starter-webmvc-ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc-openapi-starter:springdoc_openapi_starter_webmvc_ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc_openapi_starter:springdoc-openapi-starter-webmvc-ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc_openapi_starter:springdoc_openapi_starter_webmvc_ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc-openapi:springdoc-openapi-starter-webmvc-ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc-openapi:springdoc_openapi_starter_webmvc_ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc_openapi:springdoc-openapi-starter-webmvc-ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc_openapi:springdoc_openapi_starter_webmvc_ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:org.springdoc:springdoc_openapi_starter_webmvc_ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:springdoc:springdoc_openapi_starter_webmvc_ui:2.6.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:maven/org.springdoc/springdoc-openapi-starter-webmvc-ui@2.6.0
+
+##### Relationships
+
+Relationship: SPDXRef-Package-java-archive-springdoc-openapi-starter-webmvc-ui-21b2145f0093b8a0 DEPENDENCY_OF SPDXRef-Package-java-archive-maven-example-8f5ace5afda96a3e
+Relationship: SPDXRef-Package-java-archive-spring-boot-starter-web-2b5f897203ac7a2a DEPENDENCY_OF SPDXRef-Package-java-archive-maven-example-8f5ace5afda96a3e
+Relationship: SPDXRef-Package-java-archive-spring-boot-starter-test-ab04c277c676ba46 DEPENDENCY_OF SPDXRef-Package-java-archive-maven-example-8f5ace5afda96a3e
+Relationship: SPDXRef-Package-java-archive-oauth2-oidc-sdk-c6786cfd78bcd1e0 DEPENDENCY_OF SPDXRef-Package-java-archive-maven-example-8f5ace5afda96a3e
+Relationship: SPDXRef-Package-java-archive-prt-engine-java-dcea2d7db7924efd DEPENDENCY_OF SPDXRef-Package-java-archive-maven-example-8f5ace5afda96a3e
+Relationship: SPDXRef-Package-java-archive-springdoc-openapi-starter-webmvc-ui-21b2145f0093b8a0 OTHER SPDXRef-File-maven-example-pom.xml-32fc0f8e95edd127
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-java-archive-spring-boot-starter-web-2b5f897203ac7a2a OTHER SPDXRef-File-maven-example-pom.xml-32fc0f8e95edd127
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-java-archive-gradle-wrapper-8042a6ff078807c5 OTHER SPDXRef-File-...gradle-wrapper-gradle-wrapper.jar-2d4aa5bf17581ae4
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-java-archive-maven-example-8f5ace5afda96a3e OTHER SPDXRef-File-maven-example-pom.xml-32fc0f8e95edd127
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-java-archive-spring-boot-starter-test-ab04c277c676ba46 OTHER SPDXRef-File-maven-example-pom.xml-32fc0f8e95edd127
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-java-archive-oauth2-oidc-sdk-c6786cfd78bcd1e0 OTHER SPDXRef-File-maven-example-pom.xml-32fc0f8e95edd127
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-java-archive-prt-engine-java-dcea2d7db7924efd OTHER SPDXRef-File-maven-example-pom.xml-32fc0f8e95edd127
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-DocumentRoot-Directory--Users-wukai-IdeaProjects-Opensource-jenkins-example CONTAINS SPDXRef-Package-java-archive-gradle-wrapper-8042a6ff078807c5
+Relationship: SPDXRef-DocumentRoot-Directory--Users-wukai-IdeaProjects-Opensource-jenkins-example CONTAINS SPDXRef-Package-java-archive-maven-example-8f5ace5afda96a3e
+Relationship: SPDXRef-DocumentRoot-Directory--Users-wukai-IdeaProjects-Opensource-jenkins-example CONTAINS SPDXRef-Package-java-archive-oauth2-oidc-sdk-c6786cfd78bcd1e0
+Relationship: SPDXRef-DocumentRoot-Directory--Users-wukai-IdeaProjects-Opensource-jenkins-example CONTAINS SPDXRef-Package-java-archive-prt-engine-java-dcea2d7db7924efd
+Relationship: SPDXRef-DocumentRoot-Directory--Users-wukai-IdeaProjects-Opensource-jenkins-example CONTAINS SPDXRef-Package-java-archive-spring-boot-starter-test-ab04c277c676ba46
+Relationship: SPDXRef-DocumentRoot-Directory--Users-wukai-IdeaProjects-Opensource-jenkins-example CONTAINS SPDXRef-Package-java-archive-spring-boot-starter-web-2b5f897203ac7a2a
+Relationship: SPDXRef-DocumentRoot-Directory--Users-wukai-IdeaProjects-Opensource-jenkins-example CONTAINS SPDXRef-Package-java-archive-springdoc-openapi-starter-webmvc-ui-21b2145f0093b8a0
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-DocumentRoot-Directory--Users-wukai-IdeaProjects-Opensource-jenkins-example

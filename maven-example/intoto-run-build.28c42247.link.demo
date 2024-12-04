@@ -1,0 +1,25 @@
+{
+ "signatures": [
+  {
+   "keyid": "28c42247b9c52b38d3e00c3e2a9f36d388df66ed59bbab083a55283bda1361c1",
+   "sig": "28130ba83448dec7bde5d4962e37e4f1fe41eaa2db873a5a28c33684eb21a8522f7c0b2ceefc1f2ca513b05284c73d2fa3250ae18f776f010b4854a7db49b44b2b3569a92ccb0a5b019dbadd7fff4f5c56c13f5c20c000ed566d7e59255a4647b27b2b66a1233133dccb3dbd1068271bf0ce906a92111cd32486be9f53dd11b4cfd53a4334533a1afd3a29ce1967ec7836b951a554240677fdb5cabca17e5d9d7b544f430ed8fdd79ac28ca873ee74a362ef67e00b61213aba5ef394076e7f8be9b1a0a559767c04c41a692ea18f53748a917e59defdd5376c98f67c949fef05bc7c4a3acb341117644f4293f5ff38151e45e9282ce0dec047284022757d0035"
+  }
+ ],
+ "signed": {
+  "_type": "link",
+  "byproducts": {
+   "return-value": 1,
+   "stderr": "",
+   "stdout": ""
+  },
+  "command": [
+   "mvn",
+   "clean",
+   "package"
+  ],
+  "environment": {},
+  "materials": {},
+  "name": "build",
+  "products": {}
+ }
+}
