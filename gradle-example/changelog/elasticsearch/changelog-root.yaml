@@ -1,0 +1,3 @@
+elasticsearchChangeLog:
+  - include:
+      file: changelog-1.0.yaml
