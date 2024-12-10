@@ -31,12 +31,6 @@
             <artifactId>oauth2-oidc-sdk</artifactId>
             <version>11.20.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.stream.prt</groupId>
-            <artifactId>prt-engine-java</artifactId>
-            <version>1.0.1-2.8T15-SNAPSHOT</version>
-            <type>aar</type>
-        </dependency>
 <!--        com/stream/prt/prt-engine-java/1.0.1-2.8T15-SNAPSHOT-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
