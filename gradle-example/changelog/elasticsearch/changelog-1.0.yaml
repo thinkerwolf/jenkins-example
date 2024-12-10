@@ -5,10 +5,6 @@ elasticsearchChangeLog:
       comment: test
       runOnChange: true
       changes:
-        - method: DELETE
-          path: /test_media_nov_search_index
-        - method: DELETE
-          path: /test_media_detail_nov
         - method: PUT # elastic api method: GET,PUT,POST,DELETE,HEAD,OPTIONS
           path: /media_nov_search_index
           body: |-
